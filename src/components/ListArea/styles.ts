@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div<{color?: string}>`
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: ${props => props.color ?? 'blue'};
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
-    color: ${props.color ?? 'blue'};
+    color: ;
 `
 export const CheckItems = styled.div`
     display: flex;
