@@ -5,8 +5,6 @@ type Props = {
 
 }
 
-
-
 export const ListArea = ({item}: Props) => {
 
     const RandomColor = ():string => {
@@ -23,7 +21,7 @@ export const ListArea = ({item}: Props) => {
                 <input type="checkbox" />
                 <p>{item.name}</p>
             </C.CheckItems>
-            
+            <div>🗑️</div>
         </C.Container>
     )
 }

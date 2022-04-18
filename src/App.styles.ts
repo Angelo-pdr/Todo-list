@@ -14,6 +14,6 @@ export const Area = styled.div`
 export const HeaderText = styled.h1`
     font-size: 30px;
     text-align: center;
-    color: #24262D;
+    color: #0D0D0D;
     padding: 10px 0;
 `
