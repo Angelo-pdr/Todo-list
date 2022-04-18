@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{color: string}>`
+export const Container = styled.div<{color?: string}>`
     display: flex;
     align-items: center;
     background-color: white;
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
-    color: #262626;
+    color: ${props.color ?? 'blue'};
 `
 export const CheckItems = styled.div`
     display: flex;
