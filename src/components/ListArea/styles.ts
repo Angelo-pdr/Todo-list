@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type ContainerProps = {
+    done: boolean
+}
+
 export const Container = styled.div<{color?: string}>`
 
     display: flex;
@@ -16,8 +20,10 @@ export const Container = styled.div<{color?: string}>`
     }
 
 `
-export const CheckItems = styled.div`
 
+export const CheckItems = styled.div(({done}: ContainerProps) =>(
+    
+    `
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -37,6 +43,8 @@ export const CheckItems = styled.div`
         padding: 0px;
         margin: 0px;
         margin-left: 5px;
+        text-decoration: ${done ? 'line-through' : 'initial'}
     }
 
-`
+    `
+))

@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react'
 import * as C from './App.styles'
 import {List} from './List'
 import {ListArea} from './components/ListArea'
+import {InputText} from './components/inputText'
 
 const App = () => {
-
   const [list, setList] = useState (List)
+
+  useEffect(() => {
+      setList(List)
+  },[List])
 
   return(
 
@@ -13,7 +17,7 @@ const App = () => {
       <C.Area>
         <C.HeaderText>Lista de Tarefas</C.HeaderText>
 
-        {/* Area de inseração */}
+        <InputText />
 
         {list.map((item, key) => (
           <ListArea item={item}/>
