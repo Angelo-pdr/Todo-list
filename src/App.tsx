@@ -8,10 +8,10 @@ import {TypeList} from './types/type.list'
 const App = () => {
 
   const [list, setList] = useState (List)
-  const tasks = JSON.parse(localStorage.getItem('list')) 
+  const tasks = JSON.parse(localStorage.getItem('list'))
+  
   const localList = () =>  {
-   
-    localStorage.setItem('list', JSON.stringify(list))
+    localStorage.setItem('list', JSON.stringify(tasks))
   }
 
   useEffect(() => {
