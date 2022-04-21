@@ -9,7 +9,7 @@ const App = () => {
   const [list, setList] = useState (List)
 
   useEffect(() => {
-      setList(List)
+    setList(List)
   },[List])
 
   const removeItem = (newItem: TypeList ) => {
@@ -23,13 +23,14 @@ const App = () => {
   }
 
   const OnNewItem = (taskName: string) => {
-    let newItem = [...List]
+    let newItem = [...list]
     newItem.push({
       id: list.length + 1,
       name: taskName,
       done: false
     })
     setList(newItem)
+    
   }
 
   return(
@@ -45,7 +46,7 @@ const App = () => {
       </C.Area>
     </C.Container>
   )
-
+  
 }
 
 export default App
