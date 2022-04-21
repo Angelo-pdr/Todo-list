@@ -1,13 +1,14 @@
 import * as C from './styles'
 import {TypeList} from '../../types/type.list'
 import {useState} from 'react'
-import {List} from '../../List'
+
 
 type Props = {
     item:TypeList
+    onRemove: (itemNumber: TypeList) => void
 }
 
-export const ListArea = ({item}: Props) => {
+export const ListArea = ({item ,onRemove}: Props) => {
 
     const RandomColor = ():string => {
     
@@ -16,6 +17,9 @@ export const ListArea = ({item}: Props) => {
         return  colors[random(0, colors.length)]  
     }
 
+    const HandleClick = (event: TypeList) => {
+        onRemove(event)
+    }
     const [isChecked, setIsChecked] = useState (item.done)
 
     return(
@@ -29,7 +33,7 @@ export const ListArea = ({item}: Props) => {
                  />
                 <p>{item.name}</p>
             </C.CheckItems>
-            <div >🗑️</div>
+            <div onClick={event => HandleClick(item)}>🗑️</div>
         </C.Container>
     )
 }
