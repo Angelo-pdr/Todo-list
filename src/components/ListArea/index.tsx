@@ -29,7 +29,7 @@ export const ListArea = ({item , onRemove}: Props) => {
                 <input type="checkbox" 
                     checked={isChecked}
                     onChange={event => setIsChecked(event.target.checked)}
-                 />
+                />
                 <p>{item.name}</p>
             </C.CheckItems>
             <div onClick={ event => HandleClick(item)}>🗑️</div>

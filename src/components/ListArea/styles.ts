@@ -21,8 +21,7 @@ export const Container = styled.div<{color: string}>`
 
 `
 
-export const CheckItems = styled.div(({done}: ContainerProps) =>(
-    
+export const CheckItems = styled.div(({done}: ContainerProps) =>(   
     `
     display: flex;
     align-items: center;

@@ -6,17 +6,17 @@ import {InputText} from './components/inputText'
 import {TypeList} from './types/type.list'
 
 const App = () => {
-  const [list, setList] = useState (List)
 
-  const localList = (list:TypeList[]) => {
-    const tasks = localStorage.getItem('lista')
-    localStorage.setItem('lista', JSON.stringify(list))
+  const [list, setList] = useState (List)
+  
+  const localList = () =>  {
+    const tasks = localStorage.getItem('List')
+    localStorage.setItem('List', JSON.stringify(list))
   }
 
   useEffect(() => {
-    setList(List)
-    
-  },[List])
+    localList()
+  },[list])
 
   const removeItem = (newItem: TypeList ) => {
     let newList = [...list]
@@ -24,9 +24,9 @@ const App = () => {
     const index = newList.indexOf(newItem) 
     if(index> -1){
       newList.splice(index, 1)
-    }
+    } 
+    localList()
     setList(newList)
-    localList(newList)
   }
 
   const OnNewItem = (taskName: string) => {
@@ -36,8 +36,8 @@ const App = () => {
       name: taskName,
       done: false
     })
+    localList()
     setList(newItem)
-    localList(newItem)
   }
 
   return(
