@@ -12,24 +12,32 @@ const App = () => {
       setList(List)
   },[List])
 
-  const removeItem = (itemNumber: TypeList ) => {
-      let newList = [...list]
+  const removeItem = (newItem: TypeList ) => {
+    let newList = [...list]
 
-      const index = newList.indexOf(itemNumber) 
-      if(index> -1){
-        newList.splice(index, 1)
-      }
+    const index = newList.indexOf(newItem) 
+    if(index> -1){
+      newList.splice(index, 1)
+    }
+    setList(newList)
+  }
 
-      setList(newList)
+  const OnNewItem = (taskName: string) => {
+    let newItem = [...List]
+    newItem.push({
+      id: list.length + 1,
+      name: taskName,
+      done: false
+    })
+    setList(newItem)
   }
 
   return(
-
     <C.Container>
       <C.Area>
         <C.HeaderText>Lista de Tarefas</C.HeaderText>
 
-        <InputText />
+        <InputText onEnter={OnNewItem} />
 
         {list.map((item) => (
           <ListArea onRemove={removeItem} item={item}/>

@@ -4,11 +4,12 @@ export const Container = styled.div`
     height: 100vh;
     width: 100vw;
     background-color: #E1F4FF;
+  
 `
 
 export const Area = styled.div`
     margin: 0 auto;
-    padding: 20px 0px;
+    padding: 20px;
     max-width: 900px;
 `
 export const HeaderText = styled.h1`

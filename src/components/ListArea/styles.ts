@@ -4,7 +4,7 @@ type ContainerProps = {
     done: boolean
 }
 
-export const Container = styled.div<{color?: string}>`
+export const Container = styled.div<{color: string}>`
 
     display: flex;
     align-items: center;

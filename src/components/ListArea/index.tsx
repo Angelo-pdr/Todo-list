@@ -5,10 +5,10 @@ import {useState} from 'react'
 
 type Props = {
     item:TypeList
-    onRemove: (itemNumber: TypeList) => void
+    onRemove: (newItem: TypeList) => void
 }
 
-export const ListArea = ({item ,onRemove}: Props) => {
+export const ListArea = ({item , onRemove}: Props) => {
 
     const RandomColor = ():string => {
     
@@ -20,12 +20,11 @@ export const ListArea = ({item ,onRemove}: Props) => {
     const HandleClick = (event: TypeList) => {
         onRemove(event)
     }
+    const [color, setColor] = useState<string>(RandomColor())
     const [isChecked, setIsChecked] = useState (item.done)
 
     return(
-
-        <C.Container color={RandomColor()} >
-
+        <C.Container color={color} >
             <C.CheckItems done={isChecked}>
                 <input type="checkbox" 
                     checked={isChecked}
@@ -33,7 +32,7 @@ export const ListArea = ({item ,onRemove}: Props) => {
                  />
                 <p>{item.name}</p>
             </C.CheckItems>
-            <div onClick={event => HandleClick(item)}>🗑️</div>
+            <div onClick={ event => HandleClick(item)}>🗑️</div>
         </C.Container>
     )
 }

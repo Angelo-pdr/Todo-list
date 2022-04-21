@@ -1,13 +1,19 @@
 import * as C from './styles'
 import {KeyboardEvent, useState} from 'react'
 
+type Props = {
+    onEnter: (taskName: string) => void
+}
 
-export const InputText = () => {
+export const InputText = ({onEnter}: Props) => {
 
     const [inputText, setInputText] = useState('')
 
     const handleKeyUp = (event: KeyboardEvent) => {
-        console.log(event)
+        if(event.code === 'Enter' && inputText !== ''){ 
+            onEnter(inputText)
+            setInputText('')
+        }
     }
 
     return(

@@ -14,6 +14,7 @@ export const Container = styled.div`
         font-size: 30px;
         margin: 0;
         margin-right: 5px;
+        margin-bottom: 5px;
         padding: 0;
     }
 
