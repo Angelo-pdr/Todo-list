@@ -8,24 +8,13 @@ import {TypeList} from './types/type.list'
 const App = () => {
 
   const [list, setList] = useState (List)
-  const tasks = JSON.parse(localStorage.getItem('list'))
-  
-  const localList = () =>  {
-    localStorage.setItem('list', JSON.stringify(tasks))
-  }
-
-  useEffect(() => {
-    localList()
-  },[list])
 
   const removeItem = (newItem: TypeList ) => {
     let newList = [...list]
-
     const index = newList.indexOf(newItem) 
-    if(index> -1){
+    if(index > -1){
       newList.splice(index, 1)
     } 
-    localList()
     setList(newList)
   }
 
@@ -36,7 +25,6 @@ const App = () => {
       name: taskName,
       done: false
     })
-    localList()
     setList(newItem)
   }
 
@@ -56,4 +44,4 @@ const App = () => {
   
 }
 
-export default App
+export default App 
