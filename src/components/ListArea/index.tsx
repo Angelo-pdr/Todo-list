@@ -22,13 +22,13 @@ export const ListArea = ({item , onRemove, onChange}: Props) => {
         onRemove(event)
     }
     const [color, setColor] = useState<string>(RandomColor)
-    const [isChecked, setIsChecked] = useState (item.done)
+
 
     return(
         <C.Container color={color} >
-            <C.CheckItems done={isChecked}>
+            <C.CheckItems done={item.done}>
                 <input type="checkbox" 
-                    checked={isChecked}
+                    checked={item.done}
                     onChange={event => onChange(item.id, event.target.checked)}
                 />
                 <p>{item.name}</p>

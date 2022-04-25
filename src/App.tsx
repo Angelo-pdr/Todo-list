@@ -36,7 +36,13 @@ const App = () => {
   }
 
   const HandleTaskChange = (id:number, done:boolean) => {
-
+      const newList = [...list]
+      for(let index in newList){
+          if(newList[index].id === id) {
+             newList[index].done = done
+          }
+      }
+      setList(newList)
   }
 
   const SaveLocalStorage = () => {
