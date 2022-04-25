@@ -19,7 +19,6 @@ export const InputText = ({onEnter}: Props) => {
     return(
         <C.Container>
             <div className='image'>+</div>
-            
             <input 
                 type="text"
                 placeholder='Adicione uma Tarefa'

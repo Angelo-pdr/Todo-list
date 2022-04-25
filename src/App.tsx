@@ -7,7 +7,12 @@ import {TypeList} from './types/type.list'
 
 const App = () => {
 
-  const [list, setList] = useState (List)
+  const [list, setList] = useState (JSON.parse(localStorage.getItem('list') || '[]'))
+
+
+  useEffect(()=> {
+    SaveLocalStorage()
+  },[list])
 
   const removeItem = (newItem: TypeList ) => {
     let newList = [...list]
@@ -16,16 +21,24 @@ const App = () => {
       newList.splice(index, 1)
     } 
     setList(newList)
+
+    SaveLocalStorage()
   }
 
   const OnNewItem = (taskName: string) => {
-    let newItem = [...list]
-    newItem.push({
+    let newList = [...list]
+    newList.push({
       id: list.length + 1,
       name: taskName,
       done: false
     })
-    setList(newItem)
+    setList(newList)
+
+    SaveLocalStorage()
+  }
+
+  const SaveLocalStorage = () => {
+    localStorage.setItem('list', JSON.stringify(list))
   }
 
   return(
@@ -35,7 +48,7 @@ const App = () => {
 
         <InputText onEnter={OnNewItem} />
 
-        {list.map((item) => (
+        {list.map((item:any) => (
           <ListArea onRemove={removeItem} item={item}/>
         ))}
       </C.Area>

@@ -20,7 +20,7 @@ export const ListArea = ({item , onRemove}: Props) => {
     const HandleClick = (event: TypeList) => {
         onRemove(event)
     }
-    const [color, setColor] = useState<string>(RandomColor())
+    const [color, setColor] = useState<string>(RandomColor)
     const [isChecked, setIsChecked] = useState (item.done)
 
     return(
