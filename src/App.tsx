@@ -7,7 +7,7 @@ import {TypeList} from './types/type.list'
 
 const App = () => {
 
-  const [list, setList] = useState (JSON.parse(localStorage.getItem('list') || '[]'))
+  const [list, setList] = useState<any[]> (JSON.parse(localStorage.getItem('list') || '[]'))
 
 
   useEffect(()=> {
@@ -21,7 +21,6 @@ const App = () => {
       newList.splice(index, 1)
     } 
     setList(newList)
-
     SaveLocalStorage()
   }
 
@@ -33,8 +32,11 @@ const App = () => {
       done: false
     })
     setList(newList)
-
     SaveLocalStorage()
+  }
+
+  const HandleTaskChange = (id:number, done:boolean) => {
+
   }
 
   const SaveLocalStorage = () => {
@@ -48,8 +50,8 @@ const App = () => {
 
         <InputText onEnter={OnNewItem} />
 
-        {list.map((item:any) => (
-          <ListArea onRemove={removeItem} item={item}/>
+        {list.map((item) => (
+          <ListArea onRemove={removeItem} item={item} onChange={HandleTaskChange}/>
         ))}
       </C.Area>
     </C.Container>

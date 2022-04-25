@@ -6,9 +6,10 @@ import {useState} from 'react'
 type Props = {
     item:TypeList
     onRemove: (newItem: TypeList) => void
+    onChange: (id: number, done: boolean) => void
 }
 
-export const ListArea = ({item , onRemove}: Props) => {
+export const ListArea = ({item , onRemove, onChange}: Props) => {
 
     const RandomColor = ():string => {
     
@@ -28,7 +29,7 @@ export const ListArea = ({item , onRemove}: Props) => {
             <C.CheckItems done={isChecked}>
                 <input type="checkbox" 
                     checked={isChecked}
-                    onChange={event => setIsChecked(event.target.checked)}
+                    onChange={event => onChange(item.id, event.target.checked)}
                 />
                 <p>{item.name}</p>
             </C.CheckItems>
