@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import * as C from './App.styles'
-import {List} from './List'
 import {ListArea} from './components/ListArea'
 import {InputText} from './components/inputText'
 import {TypeList} from './types/type.list'
@@ -8,7 +7,6 @@ import {TypeList} from './types/type.list'
 const App = () => {
 
   const [list, setList] = useState<any[]> (JSON.parse(localStorage.getItem('list') || '[]'))
-
 
   useEffect(()=> {
     SaveLocalStorage()
@@ -56,8 +54,8 @@ const App = () => {
 
         <InputText onEnter={OnNewItem} />
 
-        {list.map((item) => (
-          <ListArea onRemove={removeItem} item={item} onChange={HandleTaskChange}/>
+        {list.map((item, index) => (
+          <ListArea key={index} onRemove={removeItem} item={item} onChange={HandleTaskChange}/>
         ))}
       </C.Area>
     </C.Container>

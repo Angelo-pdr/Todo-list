@@ -4,7 +4,6 @@ export const Container = styled.div`
     height: 100vh;
     width: 100vw;
     background-color: #E1F4FF;
-  
 `
 
 export const Area = styled.div`

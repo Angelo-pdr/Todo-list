@@ -4,7 +4,7 @@ import {useState} from 'react'
 
 
 type Props = {
-    item:TypeList
+    item:any
     onRemove: (newItem: TypeList) => void
     onChange: (id: number, done: boolean) => void
 }
