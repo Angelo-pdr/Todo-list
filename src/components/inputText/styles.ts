@@ -9,6 +9,7 @@ export const Container = styled.div`
     padding-left: 5px;
     font-size: 20px;
     padding: 5px 0;
+    
     .image{
         color: black;
         font-size: 30px;

@@ -5,6 +5,7 @@ import {ListArea} from './components/ListArea'
 import {InputText} from './components/inputText'
 import {TypeList} from './types/type.list'
 
+
 const App = () => {
 
   const [list, setList] = useState<any[]> (JSON.parse(localStorage.getItem('list') || '[]'))
