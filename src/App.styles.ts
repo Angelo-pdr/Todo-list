@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
     height: 100vh;
     width: 100vw;
-    background-color: #E1F4FF;
+    background-color: #E1F4FF; 
+    margin: 0;
+    padding: 0; 
 `
 
 export const Area = styled.div`
     margin: 0 auto;
     padding: 20px;
-    max-width: 900px;
+    max-width: 800px;
 `
 export const HeaderText = styled.h1`
     font-size: 30px;

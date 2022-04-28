@@ -8,13 +8,12 @@ export const Container = styled.div`
     border: 1px solid black;
     padding-left: 5px;
     font-size: 20px;
-
+    padding: 5px 0;
     .image{
         color: black;
         font-size: 30px;
         margin: 0;
-        margin-right: 5px;
-        margin-bottom: 5px;
+        margin: 0 5px;
         padding: 0;
     }
 
