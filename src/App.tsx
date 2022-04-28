@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import {v4 as uuidv4} from 'uuid'
 import * as C from './App.styles'
 import {ListArea} from './components/ListArea'
 import {InputText} from './components/inputText'
@@ -25,7 +26,7 @@ const App = () => {
   const OnNewItem = (taskName: string) => {
     let newList = [...list]
     newList.push({
-      id: list.length + 1,
+      id: uuidv4(),
       name: taskName,
       done: false
     })
